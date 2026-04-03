@@ -10,13 +10,16 @@ export default function WorkersPage() {
         Same day work available now. Flexible schedule, vetted community.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-        {["Flexible Schedule", "Paid After Each Job", "Vetted Community"].map((b) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        {["Pick Your Own Hours", "Paid Within 24 Hours", "Background-Checked Community"].map((b) => (
           <div key={b} className="bg-secondary rounded-card p-4 text-center text-sm font-semibold">
             {b}
           </div>
         ))}
       </div>
+      <p className="text-sm text-gray-500 text-center mb-10">
+        Join 200+ vetted professionals earning $20+/hr
+      </p>
 
       <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
         <div>
@@ -64,6 +67,14 @@ export default function WorkersPage() {
           Submit Application
         </button>
       </form>
+
+      <div className="mt-10 bg-secondary rounded-card p-6">
+        <h3 className="font-heading font-bold text-sm mb-3 text-gray-400 uppercase tracking-wide">What workers say</h3>
+        <blockquote className="text-gray-700 italic">
+          &ldquo;I pick up shifts when I want. Got paid the same day my first week.&rdquo;
+        </blockquote>
+        <p className="text-sm text-gray-500 mt-2 font-semibold">— Carlos M.</p>
+      </div>
     </div>
   );
 }

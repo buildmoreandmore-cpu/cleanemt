@@ -18,7 +18,7 @@ export default function AdminPage() {
       </div>
 
       <div className="bg-secondary rounded-card p-8 text-center">
-        <p className="text-gray-500">Connect Supabase to manage bookings and workers.</p>
+        <p className="text-gray-500">Connect your Supabase project to start managing bookings and workers. See the setup guide in your project README.</p>
       </div>
     </div>
   );

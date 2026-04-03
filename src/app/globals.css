@@ -12,3 +12,35 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Motion Design: Fade-in-up on scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Staggered offset delays for child elements */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+
+/* Subtle pulse for CTA buttons */
+@keyframes subtlePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 200, 150, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(0, 200, 150, 0); }
+}
+
+.animate-cta-pulse {
+  animation: subtlePulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
