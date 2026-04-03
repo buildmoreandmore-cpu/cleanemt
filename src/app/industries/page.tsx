@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Industries We Serve | SameDayScrub",
   description:
-    "Same-day janitorial staffing for offices, Airbnb, warehouses, retail, post-construction, and schools. Book vetted cleaning staff in hours.",
+    "Commercial janitorial staffing for offices, warehouses, retail, post-construction, schools, and managed properties. Same-day deployment.",
 };
 
 const verticals = [
@@ -17,8 +17,8 @@ const verticals = [
   },
   {
     slug: "airbnb-vacation-rentals",
-    title: "Airbnb & Vacation Rentals",
-    desc: "Same-day turnover cleaning so you never miss a checkout deadline.",
+    title: "Commercial & Managed Rentals",
+    desc: "Same-day turnover cleaning for managed properties and commercial rentals.",
     stat: "$2,400",
     statLabel: "avg. lost per year from missed turnovers",
   },
@@ -61,8 +61,8 @@ export default function IndustriesIndex() {
             Industries We Serve
           </h1>
           <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
-            Same-day janitorial staffing built for your industry. Vetted
-            cleaners, no contracts, real accountability.
+            Commercial janitorial staffing built for your industry. Vetted
+            crews, no contracts, real accountability.
           </p>
         </div>
       </section>

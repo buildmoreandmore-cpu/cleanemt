@@ -26,7 +26,7 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: "SameDayScrub — Clean Staff. Right Now.",
   description:
-    "Book vetted janitorial professionals for same-day deployment. Uber for cleaning staff.",
+    "Commercial janitorial staffing on demand. Book vetted cleaning crews for offices, warehouses, retail, and facilities — same day.",
   icons: {
     icon: "/icon.svg",
   },

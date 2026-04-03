@@ -140,7 +140,7 @@ export default function BookPage() {
           </div>
           <div>
             <label className="block text-sm font-semibold mb-1">Special Instructions</label>
-            <textarea placeholder="Gate code, parking info, areas to focus on..." value={notes} onChange={(e) => setNotes(e.target.value)} rows={3} className="w-full border rounded-lg px-3 py-2.5 text-sm" />
+            <textarea placeholder="Building access, loading dock info, key areas to clean..." value={notes} onChange={(e) => setNotes(e.target.value)} rows={3} className="w-full border rounded-lg px-3 py-2.5 text-sm" />
           </div>
           <div className="flex gap-3">
             <button onClick={() => setStep(1)} className="flex-1 border border-gray-300 py-3 rounded-full font-semibold">Back</button>

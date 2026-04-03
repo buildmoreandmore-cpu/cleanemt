@@ -38,25 +38,25 @@ const industries: Record<
     },
   },
   "airbnb-vacation-rentals": {
-    title: "Airbnb & Vacation Rental Turnover Cleaning",
-    meta: "Same-day turnover cleaning for Airbnb and vacation rentals. Never miss a checkout deadline again.",
-    hero: "Never Miss Another Checkout Deadline",
+    title: "Commercial & Managed Rental Turnover Cleaning",
+    meta: "Same-day turnover cleaning for managed properties and commercial rentals. Never miss a tenant deadline again.",
+    hero: "Never Miss Another Turnover Deadline",
     problem:
-      "A bad review costs you $1,000+ in lost bookings. One missed turnover means a refund, a 1-star review, and a damaged listing.",
+      "Missed turnovers mean lost revenue, tenant complaints, and property damage claims. Every hour a unit sits dirty is money left on the table.",
     costLine:
-      "Hosts who miss turnovers lose an average of $2,400/year in refunds and lost bookings.",
+      "Property managers who miss turnovers lose an average of $2,400/year in vacancy costs and tenant credits.",
     painPoints: [
-      "Guest checks out at 11am, next guest arrives at 3pm",
-      "Your regular cleaner cancels last minute",
-      "Quality inconsistency leads to bad reviews",
-      "Managing multiple properties means multiple headaches",
+      "Tenant moves out Friday, new lease starts Monday",
+      "Your regular cleaning crew cancels last minute",
+      "Quality inconsistency across multiple properties",
+      "Managing 10+ units means constant scheduling headaches",
     ],
     solution:
-      "On-demand turnover crews dispatched same day. We handle the clean so you protect your reviews and your revenue.",
+      "On-demand turnover crews dispatched same day. We handle the clean so you protect your leases and your revenue.",
     testimonial: {
       name: "James R.",
-      role: "Superhost, 12 Properties",
-      text: "I use SameDayScrub for every turnover. My ratings went from 4.6 to 4.9 in three months. The consistency is unreal.",
+      role: "Property Manager, 12 Units",
+      text: "I use SameDayScrub for every turnover. Vacancy time dropped by 40% in three months. The consistency is unreal.",
     },
   },
   warehouses: {

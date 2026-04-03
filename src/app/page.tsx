@@ -25,13 +25,46 @@ const stats = [
   { value: "2hr", label: "Average Response Time" },
 ];
 
+const industryIcons: Record<string, React.ReactNode> = {
+  "office-buildings": (
+    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
+    </svg>
+  ),
+  "schools-facilities": (
+    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+    </svg>
+  ),
+  warehouses: (
+    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
+    </svg>
+  ),
+  "retail-stores": (
+    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
+    </svg>
+  ),
+  "post-construction": (
+    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.1-5.1a2.25 2.25 0 010-3.182l.71-.71a2.25 2.25 0 013.182 0l.71.71a2.25 2.25 0 010 3.182l-5.1 5.1m0 0L3 21m8.42-5.83l5.1-5.1a2.25 2.25 0 000-3.182l-.71-.71a2.25 2.25 0 00-3.182 0l-.71.71a2.25 2.25 0 000 3.182l5.1 5.1m0 0L21 21" />
+    </svg>
+  ),
+  "airbnb-vacation-rentals": (
+    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
+    </svg>
+  ),
+};
+
 const industries = [
-  { name: "Office Buildings", slug: "office-buildings", icon: "🏢" },
-  { name: "Schools & Facilities", slug: "schools-facilities", icon: "🏫" },
-  { name: "Warehouses", slug: "warehouses", icon: "🏭" },
-  { name: "Retail Stores", slug: "retail-stores", icon: "🏪" },
-  { name: "Post-Construction", slug: "post-construction", icon: "🔨" },
-  { name: "Airbnb / Vacation Rentals", slug: "airbnb-vacation-rentals", icon: "🏠" },
+  { name: "Office Buildings", slug: "office-buildings" },
+  { name: "Schools & Facilities", slug: "schools-facilities" },
+  { name: "Warehouses", slug: "warehouses" },
+  { name: "Retail Stores", slug: "retail-stores" },
+  { name: "Post-Construction", slug: "post-construction" },
+  { name: "Commercial Rentals", slug: "airbnb-vacation-rentals" },
 ];
 
 const painPoints = [
@@ -47,8 +80,8 @@ const painPoints = [
   },
   {
     stat: "$2,400/yr",
-    headline: "lost in bookings",
-    desc: "One bad review about cleanliness can cost you thousands in future revenue.",
+    headline: "lost per failed inspection",
+    desc: "Health code violations, failed walkthroughs, and tenant complaints add up fast.",
   },
 ];
 
@@ -150,16 +183,16 @@ export default function Home() {
       <section className="bg-background">
         <div className="max-w-6xl mx-auto px-4 py-20 md:py-32 text-center">
           <p className="animate-fade-in-up text-primary font-semibold text-sm uppercase tracking-widest mb-4">
-            Same-day janitorial staffing
+            Commercial janitorial staffing
           </p>
           <h1 className="animate-fade-in-up stagger-1 font-heading text-4xl md:text-6xl font-bold text-navy mb-4 text-balance">
-            Your Cleaner No-Showed?
+            Your Janitorial Crew No-Showed?
             <br />
             <span className="text-primary">We&apos;ll Be There in 2 Hours.</span>
           </h1>
           <p className="animate-fade-in-up stagger-2 text-gray-600 text-lg md:text-xl max-w-2xl mx-auto mb-8">
-            Stop scrambling. Book vetted, background-checked cleaning professionals in minutes.
-            They show up on time, every time.
+            Stop scrambling. Book vetted, background-checked commercial cleaning professionals in minutes.
+            Offices, warehouses, retail, facilities — we staff them all, same day.
           </p>
           <div className="animate-fade-in-up stagger-3 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
@@ -292,16 +325,18 @@ export default function Home() {
             Industries We Serve
           </h2>
           <p className="text-gray-500 text-center mb-10 max-w-md mx-auto">
-            From offices to Airbnbs, we keep every type of space spotless.
+            Commercial-grade janitorial staff for every type of facility.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
             {industries.map((ind) => (
               <Link
                 key={ind.slug}
                 href={`/industries/${ind.slug}`}
-                className="group bg-white rounded-card p-5 text-center shadow-sm hover:shadow-md transition-shadow border border-transparent hover:border-primary/30"
+                className="group bg-white rounded-card p-5 text-center shadow-sm hover:shadow-md transition-shadow border border-transparent hover:border-primary/30 flex flex-col items-center gap-2"
               >
-                <span className="text-2xl mb-2 block">{ind.icon}</span>
+                <span className="text-primary group-hover:scale-110 transition-transform">
+                  {industryIcons[ind.slug]}
+                </span>
                 <span className="font-semibold text-sm text-navy group-hover:text-primary transition-colors">
                   {ind.name}
                 </span>
@@ -318,7 +353,7 @@ export default function Home() {
             What Our Clients Say
           </h2>
           <p className="text-gray-500 text-center mb-10 max-w-md mx-auto">
-            Real feedback from businesses that count on us every week.
+            Real feedback from facility managers and operations teams that count on us.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((t) => (

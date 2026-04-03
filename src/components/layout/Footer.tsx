@@ -13,13 +13,14 @@ export default function Footer() {
             </div>
             <p className="text-primary font-mono text-xs tracking-wider mb-2">&ldquo;Clean staff. Right now.&rdquo;</p>
             <p className="text-gray-400 text-sm">
-              Vetted janitorial professionals deployed same day.
+              Commercial janitorial crews deployed same day.
             </p>
           </div>
           <div>
             <h4 className="font-semibold text-sm mb-3">Quick Links</h4>
             <div className="flex flex-col gap-2 text-sm text-gray-400">
               <Link href="/book" className="hover:text-primary">Book a Crew</Link>
+              <Link href="/industries" className="hover:text-primary">Industries</Link>
               <Link href="/workers" className="hover:text-primary">Join as Worker</Link>
               <Link href="/dashboard" className="hover:text-primary">My Bookings</Link>
               <Link href="/login" className="hover:text-primary">Log In</Link>
