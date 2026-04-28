@@ -2,6 +2,7 @@ import Link from "next/link";
 import LiveDot from "@/components/ui/LiveDot";
 import SectionLabel from "@/components/ui/SectionLabel";
 import DispatchTicker from "@/components/ui/DispatchTicker";
+import Wordmark from "@/components/ui/Wordmark";
 import { CONTACT_PHONE } from "@/lib/contact";
 
 const services = [
@@ -37,11 +38,14 @@ export default function Home() {
       {/* SECTION 1 — HERO */}
       <section className="bg-bg text-ink-soft min-h-[88vh] flex flex-col relative">
         <div className="max-w-7xl mx-auto w-full px-4 lg:px-6 pt-10 pb-6 flex items-start justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <span className="display lowercase text-2xl tracking-tighter">
-              cleanemt
-            </span>
-            <LiveDot />
+          <div className="flex flex-col">
+            <div className="flex items-center gap-2">
+              <Wordmark size="md" />
+              <LiveDot />
+            </div>
+            <p className="mono text-[10px] uppercase tracking-[0.22em] text-ink-soft/55 mt-1">
+              Emergency Mitigation Team
+            </p>
           </div>
           <div className="text-right hidden md:block">
             <a
@@ -59,7 +63,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto w-full px-4 lg:px-6 flex-1 flex flex-col justify-center pt-8 pb-16">
           <p className="reveal mono text-[11px] uppercase tracking-[0.25em] text-accent mb-6">
             <span className="inline-flex items-center gap-2">
-              <LiveDot small /> Atlanta · Emergency dispatch
+              <LiveDot small /> Emergency Mitigation Team · Atlanta · 24/7
             </span>
           </p>
           <h1 className="reveal reveal-1 display-caps text-[14vw] sm:text-[11vw] md:text-[9vw] lg:text-[8.4rem] xl:text-[10rem] leading-[0.92] max-w-[18ch]">
@@ -100,6 +104,22 @@ export default function Home() {
         </div>
 
         <DispatchTicker />
+      </section>
+
+      {/* BRAND DEFINITION — what EMT means here */}
+      <section className="bg-bg-soft border-b border-ink/10 py-8 md:py-10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div>
+            <Wordmark size="lg" />
+            <p className="mono text-[11px] uppercase tracking-[0.22em] text-ink/60 mt-2">
+              Emergency Mitigation Team · for commercial spaces
+            </p>
+          </div>
+          <p className="text-ink/75 text-base md:text-lg max-w-md leading-relaxed">
+            EMTs respond first. With the right gear. In the right time. For
+            commercial buildings, that&rsquo;s us.
+          </p>
+        </div>
       </section>
 
       {/* SECTION 2 — THE WEDGE */}

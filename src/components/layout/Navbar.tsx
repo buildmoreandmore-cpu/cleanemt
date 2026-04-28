@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import LiveDot from "@/components/ui/LiveDot";
+import Wordmark from "@/components/ui/Wordmark";
 
 type Phone = { display: string; tel: string };
 
@@ -37,9 +38,7 @@ export default function Navbar({ phone }: { phone: Phone }) {
     >
       <div className="max-w-7xl mx-auto px-4 lg:px-6 h-14 flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <span className="display lowercase text-xl tracking-tighter">
-            cleanemt
-          </span>
+          <Wordmark size="sm" />
           <LiveDot />
         </Link>
 

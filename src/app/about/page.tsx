@@ -28,6 +28,23 @@ export default function AboutPage() {
 
       <section className="bg-bg-soft py-24 md:py-32">
         <div className="max-w-3xl mx-auto px-4 lg:px-6 space-y-8 text-lg leading-relaxed text-ink/80">
+          <div>
+            <p className="mono text-[11px] uppercase tracking-[0.22em] text-ink/55 mb-3">
+              The name
+            </p>
+            <p className="display text-3xl md:text-4xl tracking-tighter text-ink leading-[1.05]">
+              EMT &mdash; <span className="text-accent">Emergency Mitigation Team</span>.
+              Same standard as the EMTs you call when something happens to a
+              person, applied to what happens in a building.
+            </p>
+            <p className="mt-5 text-ink/75">
+              The name is deliberate. EMTs respond first, in the right gear, in
+              the right time, no matter what they walk into. We do the same
+              &mdash; for floods, biohazards, post-event chaos, surprise
+              inspections, and the calls your nightly vendor missed.
+            </p>
+          </div>
+
           <p>
             CleanEMT is a commercial cleaning response company built for the
             moment when the recurring vendor can&rsquo;t help &mdash; the flood, the

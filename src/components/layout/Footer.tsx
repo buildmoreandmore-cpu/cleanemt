@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LiveDot from "@/components/ui/LiveDot";
+import Wordmark from "@/components/ui/Wordmark";
 import {
   CONTACT_PHONE,
   CONTACT_EMAIL,
@@ -35,12 +36,13 @@ export default function Footer() {
     <footer className="bg-bg text-ink-soft">
       <div className="max-w-7xl mx-auto px-4 lg:px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <span className="display lowercase text-2xl tracking-tighter">
-              cleanemt
-            </span>
+          <div className="flex items-center gap-2 mb-2">
+            <Wordmark size="md" />
             <LiveDot />
           </div>
+          <p className="mono text-[10px] uppercase tracking-[0.22em] text-ink-soft/55 mb-4">
+            Emergency Mitigation Team
+          </p>
           <p className="text-ink-soft/70 text-sm max-w-xs leading-relaxed mb-6">
             Atlanta&apos;s 24/7 emergency commercial cleaning response.
             Crew on-site within 4 hours. Any condition, any hour.
