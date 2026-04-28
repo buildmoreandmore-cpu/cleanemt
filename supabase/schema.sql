@@ -1,4 +1,4 @@
--- SameDayScrub Database Schema
+-- CleanEMT Database Schema
 -- Run this in Supabase SQL Editor.
 -- Note: the customer-facing UI uses "job" and "dispatch" instead of "booking",
 -- but the underlying table name stays `bookings` for migration continuity.

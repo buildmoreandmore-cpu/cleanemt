@@ -32,19 +32,19 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://samedayscrub.com"),
+  metadataBase: new URL("https://cleanemt.com"),
   title: {
-    default: "SameDayScrub — Crew on-site in 4 hours. Guaranteed.",
-    template: "%s | SameDayScrub",
+    default: "CleanEMT — Crew on-site in 4 hours. Guaranteed.",
+    template: "%s | CleanEMT",
   },
   description:
     "Atlanta's 24/7 emergency commercial cleaning response. Vetted, fully-insured crews dispatched within 4 hours for biohazard, flood, post-construction, vendor no-show, and any-condition cleanup.",
   openGraph: {
-    title: "SameDayScrub — Crew on-site in 4 hours. Guaranteed.",
+    title: "CleanEMT — Crew on-site in 4 hours. Guaranteed.",
     description:
       "Atlanta's 24/7 emergency commercial cleaning response. Crew on-site within 4 hours, any condition, any hour.",
-    url: "https://samedayscrub.com",
-    siteName: "SameDayScrub",
+    url: "https://cleanemt.com",
+    siteName: "CleanEMT",
     type: "website",
   },
   icons: { icon: "/icon.svg" },

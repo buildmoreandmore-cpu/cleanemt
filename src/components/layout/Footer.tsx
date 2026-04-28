@@ -37,7 +37,7 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-2 mb-4">
             <span className="display lowercase text-2xl tracking-tighter">
-              samedayscrub
+              cleanemt
             </span>
             <LiveDot />
           </div>
@@ -99,7 +99,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 lg:px-6 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
           <p className="mono text-[11px] uppercase tracking-widest text-ink-soft/50">
-            &copy; {new Date().getFullYear()} SameDayScrub LLC
+            &copy; {new Date().getFullYear()} CleanEMT LLC
           </p>
           <a
             href={`mailto:${COI_EMAIL}`}

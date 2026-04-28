@@ -7,7 +7,7 @@ export const CONTACT_PHONE = {
   tel: CONTACT_PHONE_TEL,
 };
 
-export const CONTACT_EMAIL = "dispatch@samedayscrub.com";
-export const COI_EMAIL = "coi@samedayscrub.com";
+export const CONTACT_EMAIL = "dispatch@cleanemt.com";
+export const COI_EMAIL = "coi@cleanemt.com";
 export const SERVICE_AREA = "Atlanta metro";
 export const HQ_ADDRESS = "PO Box pending — Atlanta, GA";

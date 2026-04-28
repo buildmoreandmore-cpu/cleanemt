@@ -39,7 +39,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto w-full px-4 lg:px-6 pt-10 pb-6 flex items-start justify-between gap-6">
           <div className="flex items-center gap-2">
             <span className="display lowercase text-2xl tracking-tighter">
-              samedayscrub
+              cleanemt
             </span>
             <LiveDot />
           </div>
@@ -121,7 +121,7 @@ export default function Home() {
               for 48 hours. We can be there in four.
             </p>
             <p>
-              SameDayScrub is built for the moment when &ldquo;we&rsquo;ll come tomorrow&rdquo; is
+              CleanEMT is built for the moment when &ldquo;we&rsquo;ll come tomorrow&rdquo; is
               not an answer. We dispatch a vetted crew anywhere in Atlanta metro
               within four hours, any hour of any day, for any condition.
             </p>

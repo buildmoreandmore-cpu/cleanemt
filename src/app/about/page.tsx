@@ -7,7 +7,7 @@ import { CONTACT_PHONE, SERVICE_AREA } from "@/lib/contact";
 export const metadata: Metadata = {
   title: "About — Atlanta&apos;s 24/7 emergency commercial cleaning response",
   description:
-    "SameDayScrub is Atlanta metro&apos;s 24/7 emergency commercial cleaning response company. Vetted crews, $2M general liability minimum, COI on demand within 1 hour.",
+    "CleanEMT is Atlanta metro&apos;s 24/7 emergency commercial cleaning response company. Vetted crews, $2M general liability minimum, COI on demand within 1 hour.",
 };
 
 export default function AboutPage() {
@@ -29,7 +29,7 @@ export default function AboutPage() {
       <section className="bg-bg-soft py-24 md:py-32">
         <div className="max-w-3xl mx-auto px-4 lg:px-6 space-y-8 text-lg leading-relaxed text-ink/80">
           <p>
-            SameDayScrub is a commercial cleaning response company built for the
+            CleanEMT is a commercial cleaning response company built for the
             moment when the recurring vendor can&rsquo;t help &mdash; the flood, the
             biohazard, the no-show, the post-event mess, the surprise inspection.
             We dispatch a vetted crew anywhere in {SERVICE_AREA} within four

@@ -29,7 +29,7 @@ export async function createDispatchPaymentIntents(opts: {
     payment_method: paymentMethodId,
     confirm: true,
     capture_method: "automatic",
-    description: `SameDayScrub trip charge · ${jobId}`,
+    description: `CleanEMT trip charge · ${jobId}`,
     metadata: { jobId, charge: "trip" },
   });
 
@@ -40,7 +40,7 @@ export async function createDispatchPaymentIntents(opts: {
     payment_method: paymentMethodId,
     confirm: true,
     capture_method: "manual", // released or captured at sign-off
-    description: `SameDayScrub hourly hold · ${jobId}`,
+    description: `CleanEMT hourly hold · ${jobId}`,
     metadata: { jobId, charge: "hourly" },
   });
 
