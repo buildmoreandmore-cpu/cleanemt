@@ -17,7 +17,7 @@ export default function FacilityManagersPage() {
       <section className="bg-bg text-ink-soft pt-20 pb-24 md:pt-28 md:pb-32">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <SectionLabel number="∎" tone="dark">For facility managers</SectionLabel>
-          <h1 className="display-caps mt-6 text-7xl md:text-9xl lg:text-[10rem] leading-[0.88] tracking-tighter">
+          <h1 className="display-caps mt-6 text-5xl sm:text-7xl md:text-9xl lg:text-[10rem] leading-[0.88] tracking-tighter">
             Your nightly
             <br />
             vendor missed.
@@ -112,12 +112,12 @@ export default function FacilityManagersPage() {
 
       <section className="bg-bg text-ink-soft py-24 md:py-32 text-center">
         <div className="max-w-4xl mx-auto px-4 lg:px-6">
-          <h2 className="display-caps text-5xl md:text-7xl tracking-tighter">
+          <h2 className="display-caps text-4xl sm:text-5xl md:text-7xl tracking-tighter">
             We&rsquo;re already moving.
           </h2>
           <a
             href={`tel:${CONTACT_PHONE.tel}`}
-            className="mono block text-4xl md:text-6xl tracking-tight mt-10 hover:text-accent transition-colors"
+            className="mono block text-3xl sm:text-4xl md:text-6xl tracking-tight mt-10 hover:text-accent transition-colors"
           >
             {CONTACT_PHONE.display}
           </a>

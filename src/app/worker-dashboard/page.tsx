@@ -7,7 +7,7 @@ export default function WorkerDashboardPage() {
       <section className="bg-bg text-ink-soft pt-20 pb-12 md:pt-28">
         <div className="max-w-5xl mx-auto px-4 lg:px-6">
           <SectionLabel number="∎" tone="dark">Crew console</SectionLabel>
-          <h1 className="display-caps mt-6 text-5xl md:text-7xl tracking-tighter">
+          <h1 className="display-caps mt-6 text-4xl sm:text-5xl md:text-7xl tracking-tighter">
             Your assignments.
           </h1>
         </div>

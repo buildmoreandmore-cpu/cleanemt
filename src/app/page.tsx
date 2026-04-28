@@ -66,27 +66,27 @@ export default function Home() {
               <LiveDot small /> Emergency Mitigation Team · Atlanta · 24/7
             </span>
           </p>
-          <h1 className="reveal reveal-1 display-caps text-[14vw] sm:text-[11vw] md:text-[9vw] lg:text-[8.4rem] xl:text-[10rem] leading-[0.92] max-w-[18ch]">
+          <h1 className="reveal reveal-1 display-caps text-[12vw] sm:text-[10vw] md:text-[8.4vw] lg:text-[8rem] xl:text-[9.5rem] leading-[0.92] max-w-[18ch]">
             Crew on-site
             <br />
             in 4 hours.
           </h1>
-          <p className="reveal reveal-2 mt-6 text-xl md:text-2xl text-ink-soft/80 max-w-2xl">
+          <p className="reveal reveal-2 mt-6 text-lg sm:text-xl md:text-2xl text-ink-soft/80 max-w-2xl">
             Atlanta&rsquo;s 24/7 emergency commercial cleaning response.
             Any condition. Any hour. Vetted. Insured.
           </p>
 
-          <div className="reveal reveal-3 mt-10 flex flex-wrap gap-3 items-center">
+          <div className="reveal reveal-3 mt-10 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:items-center">
             <a
               href={`tel:${CONTACT_PHONE.tel}`}
-              className="bg-accent hover:bg-accent/90 text-white font-semibold uppercase tracking-wide text-sm px-6 py-3.5 inline-flex items-center gap-3"
+              className="bg-accent hover:bg-accent/90 text-white font-semibold uppercase tracking-wide text-sm px-6 py-3.5 inline-flex flex-col sm:flex-row items-center justify-center sm:gap-3 gap-0.5"
             >
               <span>Call now</span>
               <span className="mono text-xs opacity-80">{CONTACT_PHONE.display}</span>
             </a>
             <Link
               href="/request"
-              className="border border-ink-soft/40 hover:border-ink-soft text-ink-soft font-semibold uppercase tracking-wide text-sm px-6 py-3.5 inline-flex items-center gap-2"
+              className="border border-ink-soft/40 hover:border-ink-soft text-ink-soft font-semibold uppercase tracking-wide text-sm px-6 py-3.5 inline-flex items-center justify-center gap-2"
             >
               Request a crew <span aria-hidden>&rarr;</span>
             </Link>
@@ -127,7 +127,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 lg:px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-5">
             <SectionLabel number="01">The wedge</SectionLabel>
-            <h2 className="display mt-6 text-5xl md:text-6xl lg:text-7xl text-ink leading-[0.95] tracking-tighter text-balance">
+            <h2 className="display mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-ink leading-[0.95] tracking-tighter text-balance">
               Your nightly vendor doesn&rsquo;t answer at 9pm.
               <span className="text-accent"> We do.</span>
             </h2>
@@ -165,7 +165,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
             <div>
               <SectionLabel number="02" tone="dark">What we handle</SectionLabel>
-              <h2 className="display mt-6 text-5xl md:text-6xl lg:text-7xl tracking-tighter">
+              <h2 className="display mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tighter">
                 Conditions regular janitorial won&rsquo;t.
               </h2>
             </div>
@@ -194,7 +194,7 @@ export default function Home() {
                     {s.label}
                   </h3>
                   <p
-                    className="text-sm text-ink-soft/60 max-h-0 overflow-hidden group-hover:max-h-32 transition-all duration-300 ease-out"
+                    className="text-sm text-ink-soft/60 mt-3 md:mt-0 md:max-h-0 md:overflow-hidden md:group-hover:max-h-32 md:transition-all md:duration-300 md:ease-out"
                     dangerouslySetInnerHTML={{ __html: s.desc }}
                   />
                 </Link>
@@ -208,7 +208,7 @@ export default function Home() {
       <section className="bg-bg-soft py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <SectionLabel number="03">Where we work</SectionLabel>
-          <h2 className="display mt-6 text-5xl md:text-6xl lg:text-7xl tracking-tighter max-w-4xl text-balance">
+          <h2 className="display mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tighter max-w-4xl text-balance">
             We work in every kind of building in Atlanta.
           </h2>
 
@@ -241,7 +241,7 @@ export default function Home() {
       <section className="bg-bg text-ink-soft py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <SectionLabel number="04" tone="dark">How it works</SectionLabel>
-          <h2 className="display mt-6 text-5xl md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
+          <h2 className="display mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tighter max-w-4xl">
             Three steps. No marketplace.
           </h2>
 
@@ -288,7 +288,7 @@ export default function Home() {
       <section className="bg-bg-soft py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <SectionLabel number="05">Pricing</SectionLabel>
-          <h2 className="display mt-6 text-5xl md:text-6xl lg:text-7xl tracking-tighter max-w-4xl text-balance">
+          <h2 className="display mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tighter max-w-4xl text-balance">
             We are not the cheapest.
             <br />
             We are the fastest.
@@ -348,7 +348,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 lg:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-7">
             <SectionLabel number="06" tone="dark">For facility managers</SectionLabel>
-            <p className="display-caps mt-6 text-5xl md:text-7xl lg:text-8xl leading-[0.92] tracking-tighter text-balance">
+            <p className="display-caps mt-6 text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[0.92] tracking-tighter text-balance">
               Your nightly
               <br />
               vendor missed.
@@ -402,7 +402,7 @@ export default function Home() {
           <SectionLabel number="07" tone="dark">
             <span className="block text-center w-full">Dispatch</span>
           </SectionLabel>
-          <h2 className="display-caps mt-8 text-6xl md:text-8xl lg:text-[9rem] xl:text-[11rem] leading-[0.9] tracking-tighter text-balance max-w-5xl mx-auto">
+          <h2 className="display-caps mt-8 text-4xl sm:text-6xl md:text-8xl lg:text-[9rem] xl:text-[11rem] leading-[0.9] tracking-tighter text-balance max-w-5xl mx-auto">
             Something happened.
             <br />
             <span className="text-accent">We&rsquo;re already moving.</span>
@@ -410,7 +410,7 @@ export default function Home() {
 
           <a
             href={`tel:${CONTACT_PHONE.tel}`}
-            className="mono block text-5xl md:text-7xl lg:text-8xl tracking-tight mt-14 hover:text-accent transition-colors"
+            className="mono block text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight mt-14 hover:text-accent transition-colors break-words"
           >
             {CONTACT_PHONE.display}
           </a>

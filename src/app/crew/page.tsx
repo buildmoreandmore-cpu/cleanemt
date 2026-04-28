@@ -14,7 +14,7 @@ export default function CrewPage() {
       <section className="bg-bg text-ink-soft pt-20 pb-24 md:pt-28 md:pb-32">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <SectionLabel number="∎" tone="dark">Become crew</SectionLabel>
-          <h1 className="display-caps mt-6 text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tighter max-w-5xl">
+          <h1 className="display-caps mt-6 text-4xl sm:text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tighter max-w-5xl">
             Show up.
             <br />
             <span className="text-accent">Get paid.</span>

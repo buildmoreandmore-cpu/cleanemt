@@ -17,6 +17,7 @@ html, body {
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Default body sits on the warm off-white. Dark sections opt in. */
@@ -59,12 +60,22 @@ html, body {
 .reveal-3 { animation-delay: 0.20s; }
 .reveal-4 { animation-delay: 0.28s; }
 
-/* Live indicator pulse */
-@keyframes livePulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%      { opacity: 0.5; transform: scale(0.8); }
+/* Live indicator: expanding ring + on/off blink, dispatcher-LED style */
+@keyframes livePing {
+  0%   { transform: scale(1);   opacity: 0.75; }
+  75%  { transform: scale(2.4); opacity: 0;    }
+  100% { transform: scale(2.4); opacity: 0;    }
 }
-.live-dot { animation: livePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.live-ping { animation: livePing 1.4s cubic-bezier(0, 0, 0.2, 1) infinite; }
+
+@keyframes liveBlink {
+  0%, 100% { opacity: 1;   }
+  50%      { opacity: 0.3; }
+}
+.live-blink { animation: liveBlink 1.4s ease-in-out infinite; }
+
+/* Legacy class retained in case anything else still references it */
+.live-dot { animation: liveBlink 1.4s ease-in-out infinite; }
 
 /* Ticker marquee */
 @keyframes ticker {

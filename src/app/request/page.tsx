@@ -28,7 +28,7 @@ export default function RequestPage() {
 
       <section className="bg-bg text-ink-soft pb-16">
         <div className="max-w-3xl mx-auto px-4 lg:px-6 pt-4">
-          <h1 className="display-caps text-5xl md:text-7xl tracking-tighter leading-[0.92]">
+          <h1 className="display-caps text-4xl sm:text-5xl md:text-7xl tracking-tighter leading-[0.92]">
             Request a crew.
           </h1>
           <p className="mt-4 text-ink-soft/70 max-w-xl">

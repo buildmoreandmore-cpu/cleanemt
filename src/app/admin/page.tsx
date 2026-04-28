@@ -6,7 +6,7 @@ export default function AdminPage() {
       <section className="bg-bg text-ink-soft pt-20 pb-12 md:pt-28">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <SectionLabel number="∎" tone="dark">Admin</SectionLabel>
-          <h1 className="display-caps mt-6 text-5xl md:text-7xl tracking-tighter">
+          <h1 className="display-caps mt-6 text-4xl sm:text-5xl md:text-7xl tracking-tighter">
             Dispatch console.
           </h1>
         </div>
