@@ -1,41 +1,41 @@
 import Link from "next/link";
+import SectionLabel from "@/components/ui/SectionLabel";
+import LiveDot from "@/components/ui/LiveDot";
 
 export default function DashboardPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="font-heading text-3xl font-bold mb-2">My Bookings</h1>
-      <p className="text-gray-500 mb-8">View and manage your bookings.</p>
+    <>
+      <section className="bg-bg text-ink-soft pt-20 pb-12 md:pt-28">
+        <div className="max-w-5xl mx-auto px-4 lg:px-6">
+          <SectionLabel number="∎" tone="dark">My dispatches</SectionLabel>
+          <h1 className="display-caps mt-6 text-5xl md:text-7xl tracking-tighter">
+            Your jobs.
+          </h1>
+        </div>
+      </section>
 
-      <div className="bg-secondary rounded-card p-8 text-center space-y-4">
-        <h2 className="font-heading text-xl font-bold text-navy">No bookings yet</h2>
-        <p className="text-gray-500 max-w-md mx-auto">
-          When you book your first crew, it&apos;ll show up here. Most bookings are confirmed within 2 hours.
-        </p>
-        <Link
-          href="/book"
-          className="inline-block bg-primary hover:bg-primary-hover text-white font-semibold px-6 py-3 rounded-full transition-colors"
-        >
-          Book Your First Crew
-        </Link>
-      </div>
-
-      <div className="mt-8 bg-white rounded-card border p-6">
-        <h3 className="font-heading font-bold text-lg mb-4">How it works</h3>
-        <ul className="space-y-3 text-sm text-gray-600">
-          <li className="flex items-start gap-3">
-            <span className="bg-primary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center shrink-0 mt-0.5">1</span>
-            <span>Pick your date, time, and crew size — pricing is instant and transparent.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="bg-primary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center shrink-0 mt-0.5">2</span>
-            <span>We match you with vetted, background-checked professionals in your area.</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <span className="bg-primary text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center shrink-0 mt-0.5">3</span>
-            <span>Your crew arrives on time — track status and leave a review right here.</span>
-          </li>
-        </ul>
-      </div>
-    </div>
+      <section className="bg-bg-soft py-16 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 lg:px-6">
+          <div className="border border-ink/10 bg-white p-10 text-center">
+            <p className="mono text-[11px] uppercase tracking-[0.2em] text-ink/50 flex items-center gap-2 justify-center">
+              <LiveDot small /> No jobs on file
+            </p>
+            <h2 className="display text-3xl md:text-4xl tracking-tighter mt-4">
+              You haven&rsquo;t requested a crew yet.
+            </h2>
+            <p className="text-ink/70 max-w-md mx-auto mt-3">
+              When you dispatch your first crew, the timeline shows up here:
+              confirmed, en route, on-site, signed off.
+            </p>
+            <Link
+              href="/request"
+              className="inline-block bg-bg hover:bg-accent text-ink-soft font-semibold uppercase tracking-wide text-sm px-6 py-3 mt-8 transition-colors"
+            >
+              Request a crew
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

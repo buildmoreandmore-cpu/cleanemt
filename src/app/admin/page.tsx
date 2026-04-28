@@ -1,25 +1,45 @@
+import SectionLabel from "@/components/ui/SectionLabel";
+
 export default function AdminPage() {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
-      <h1 className="font-heading text-3xl font-bold mb-2">Admin Dashboard</h1>
-      <p className="text-gray-500 mb-8">Manage bookings, workers, and revenue.</p>
+    <>
+      <section className="bg-bg text-ink-soft pt-20 pb-12 md:pt-28">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+          <SectionLabel number="∎" tone="dark">Admin</SectionLabel>
+          <h1 className="display-caps mt-6 text-5xl md:text-7xl tracking-tighter">
+            Dispatch console.
+          </h1>
+        </div>
+      </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        {[
-          { label: "Today", value: "$0" },
-          { label: "This Week", value: "$0" },
-          { label: "This Month", value: "$0" },
-        ].map((s) => (
-          <div key={s.label} className="bg-white rounded-card shadow-sm p-5">
-            <p className="text-xs text-gray-400 mb-1">{s.label}</p>
-            <p className="font-heading text-2xl font-bold">{s.value}</p>
+      <section className="bg-bg-soft py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-ink/10 border border-ink/10 mb-10">
+            {[
+              { label: "Today", value: "$0" },
+              { label: "This week", value: "$0" },
+              { label: "This month", value: "$0" },
+            ].map((s) => (
+              <div key={s.label} className="bg-bg-soft p-6">
+                <p className="mono text-[11px] uppercase tracking-[0.2em] text-ink/50">
+                  {s.label}
+                </p>
+                <p className="display text-4xl tracking-tighter mt-3">{s.value}</p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
 
-      <div className="bg-secondary rounded-card p-8 text-center">
-        <p className="text-gray-500">Connect your Supabase project to start managing bookings and workers. See the setup guide in your project README.</p>
-      </div>
-    </div>
+          <div className="border border-ink/10 bg-white p-8">
+            <p className="mono text-[11px] uppercase tracking-[0.2em] text-ink/50">
+              Connect Supabase
+            </p>
+            <p className="text-ink/70 mt-3">
+              Wire `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
+              then run `supabase/schema.sql` to populate dispatcher data here.
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

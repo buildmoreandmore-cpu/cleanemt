@@ -1,50 +1,70 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans, DM_Mono } from "next/font/google";
+import {
+  IBM_Plex_Sans_Condensed,
+  IBM_Plex_Sans,
+  IBM_Plex_Mono,
+} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import StickyDispatchBar from "@/components/layout/StickyDispatchBar";
+import { CONTACT_PHONE } from "@/lib/contact";
 
-const syne = Syne({
+const display = IBM_Plex_Sans_Condensed({
   subsets: ["latin"],
-  variable: "--font-syne",
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const body = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
   display: "swap",
 });
 
-const dmMono = DM_Mono({
+const mono = IBM_Plex_Mono({
   subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-dm-mono",
+  weight: ["400", "500", "600"],
+  variable: "--font-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "SameDayScrub — Clean Staff. Right Now.",
+  metadataBase: new URL("https://samedayscrub.com"),
+  title: {
+    default: "SameDayScrub — Crew on-site in 4 hours. Guaranteed.",
+    template: "%s | SameDayScrub",
+  },
   description:
-    "Commercial janitorial staffing on demand. Book vetted cleaning crews for offices, warehouses, retail, and facilities — same day.",
-  icons: {
-    icon: "/icon.svg",
+    "Atlanta's 24/7 emergency commercial cleaning response. Vetted, fully-insured crews dispatched within 4 hours for biohazard, flood, post-construction, vendor no-show, and any-condition cleanup.",
+  openGraph: {
+    title: "SameDayScrub — Crew on-site in 4 hours. Guaranteed.",
+    description:
+      "Atlanta's 24/7 emergency commercial cleaning response. Crew on-site within 4 hours, any condition, any hour.",
+    url: "https://samedayscrub.com",
+    siteName: "SameDayScrub",
+    type: "website",
+  },
+  icons: { icon: "/icon.svg" },
+  other: {
+    "theme-color": "#0E0E10",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body
-        className={`${syne.variable} ${dmSans.variable} ${dmMono.variable} font-body antialiased`}
+        className={`${display.variable} ${body.variable} ${mono.variable} font-body antialiased bg-bg-soft text-ink`}
       >
-        <Navbar />
-        <main>{children}</main>
+        <Navbar phone={CONTACT_PHONE} />
+        <main className="pb-20 md:pb-0">{children}</main>
         <Footer />
+        <StickyDispatchBar phone={CONTACT_PHONE} />
       </body>
     </html>
   );

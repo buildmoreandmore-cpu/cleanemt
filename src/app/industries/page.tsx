@@ -1,115 +1,130 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
+import SectionLabel from "@/components/ui/SectionLabel";
+import { INDUSTRIES } from "@/lib/industries";
+import { CONTACT_PHONE } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve | SameDayScrub",
+  title: "Industries we serve — Atlanta emergency commercial cleaning",
   description:
-    "Commercial janitorial staffing for offices, warehouses, retail, post-construction, schools, and managed properties. Same-day deployment.",
+    "Industry-specific response protocols, certifications, and typical jobs for veterinary, multifamily, healthcare, retail, construction, hospitality, and government facilities across Atlanta.",
 };
 
-const verticals = [
-  {
-    slug: "office-buildings",
-    title: "Office Buildings",
-    desc: "Vetted cleaning pros for your workspace. No contracts, no commitments.",
-    stat: "$18K",
-    statLabel: "avg. lost to poor office cleanliness per year",
-  },
-  {
-    slug: "airbnb-vacation-rentals",
-    title: "Commercial & Managed Rentals",
-    desc: "Same-day turnover cleaning for managed properties and commercial rentals.",
-    stat: "$2,400",
-    statLabel: "avg. lost per year from missed turnovers",
-  },
-  {
-    slug: "warehouses",
-    title: "Warehouses & Industrial",
-    desc: "OSHA-ready cleaning crews deployed same day. Day or night shift.",
-    stat: "$15,625",
-    statLabel: "avg. OSHA cleanliness violation fine",
-  },
-  {
-    slug: "retail-stores",
-    title: "Retail Stores",
-    desc: "Keep your store spotless for every customer, every season.",
-    stat: "12%",
-    statLabel: "higher return rate with clean stores",
-  },
-  {
-    slug: "post-construction",
-    title: "Post-Construction",
-    desc: "Heavy-duty cleanup crews so you hand off on time, every time.",
-    stat: "$1,500",
-    statLabel: "daily cost of construction delays",
-  },
-  {
-    slug: "schools-facilities",
-    title: "Schools & Facilities",
-    desc: "Supplemental janitorial staff to keep students and staff healthy.",
-    stat: "$50K+",
-    statLabel: "cost of a single flu outbreak to a district",
-  },
-];
-
-export default function IndustriesIndex() {
+export default function IndustriesPage() {
   return (
     <>
-      <section className="bg-background">
-        <div className="max-w-6xl mx-auto px-4 py-20 md:py-28 text-center">
-          <h1 className="font-heading text-3xl md:text-5xl font-bold text-navy mb-4">
-            Industries We Serve
+      <section className="bg-bg text-ink-soft pt-20 pb-24 md:pt-28 md:pb-32">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+          <SectionLabel number="∎" tone="dark">Industries</SectionLabel>
+          <h1 className="display-caps mt-6 text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tighter max-w-5xl">
+            We work in
+            <br />
+            <span className="text-accent">every kind</span>
+            <br />
+            of building.
           </h1>
-          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
-            Commercial janitorial staffing built for your industry. Vetted
-            crews, no contracts, real accountability.
+          <p className="mt-8 max-w-2xl text-xl md:text-2xl text-ink-soft/80 leading-relaxed">
+            Every facility has its own protocols, vetting requirements, and pace.
+            Here&rsquo;s how we work in each.
           </p>
-        </div>
-      </section>
 
-      <section className="bg-secondary py-16 md:py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {verticals.map((v) => (
-              <Link
-                key={v.slug}
-                href={`/industries/${v.slug}`}
-                className="group bg-white rounded-card p-6 border border-gray-200 hover:border-primary transition-colors flex flex-col"
+          <nav className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-2 gap-x-6">
+            {INDUSTRIES.map((ind) => (
+              <a
+                key={ind.slug}
+                href={`#${ind.slug}`}
+                className="mono text-[12px] uppercase tracking-[0.18em] text-ink-soft/70 hover:text-accent transition-colors flex items-center gap-3 py-1"
               >
-                <p className="font-heading text-3xl font-bold text-primary mb-1">
-                  {v.stat}
-                </p>
-                <p className="text-xs text-gray-400 uppercase tracking-wide mb-4">
-                  {v.statLabel}
-                </p>
-                <h2 className="font-heading text-xl font-bold text-navy mb-2 group-hover:text-primary transition-colors">
-                  {v.title}
-                </h2>
-                <p className="text-gray-600 text-sm mb-4 flex-1">{v.desc}</p>
-                <span className="text-primary font-semibold text-sm">
-                  Learn more &rarr;
-                </span>
-              </Link>
+                <span className="text-ink-soft/40">{ind.num}</span>
+                <span>{ind.name}</span>
+              </a>
             ))}
-          </div>
+          </nav>
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-navy mb-4">
-            Don&rsquo;t see your industry?
-          </h2>
-          <p className="text-gray-600 text-lg mb-8">
-            We deploy cleaning staff to any commercial facility. If it needs
-            cleaning, we&rsquo;ve got you covered.
-          </p>
-          <Link
-            href="/book"
-            className="inline-block bg-primary hover:bg-primary-hover text-white font-semibold px-8 py-3.5 rounded-full text-lg transition-colors"
+      <div className="bg-bg-soft">
+        {INDUSTRIES.map((ind, i) => (
+          <section
+            key={ind.slug}
+            id={ind.slug}
+            className={`scroll-mt-20 border-t border-ink/10 ${
+              i % 2 === 0 ? "bg-bg-soft" : "bg-white"
+            }`}
           >
-            Book a Crew
-          </Link>
+            <div className="max-w-7xl mx-auto px-4 lg:px-6 py-20 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-10">
+              <div className="lg:col-span-5">
+                <p className="mono text-[11px] uppercase tracking-[0.2em] text-ink/50">
+                  {ind.num}
+                </p>
+                <h2 className="display mt-4 text-4xl md:text-5xl lg:text-6xl tracking-tighter text-balance">
+                  {ind.name}
+                </h2>
+                <p className="mt-4 text-lg text-ink/70">{ind.hook}</p>
+              </div>
+
+              <div className="lg:col-span-7 space-y-8 lg:pt-2">
+                <div>
+                  <p className="mono text-[11px] uppercase tracking-[0.2em] text-ink/50 mb-2">
+                    Certifications & training
+                  </p>
+                  <p className="text-ink/80 leading-relaxed">{ind.certifications}</p>
+                </div>
+                <div>
+                  <p className="mono text-[11px] uppercase tracking-[0.2em] text-ink/50 mb-2">
+                    Response protocols
+                  </p>
+                  <p className="text-ink/80 leading-relaxed">{ind.protocols}</p>
+                </div>
+                <div>
+                  <p className="mono text-[11px] uppercase tracking-[0.2em] text-ink/50 mb-2">
+                    Typical jobs
+                  </p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5 text-ink/80">
+                    {ind.typicalJobs.map((j) => (
+                      <li key={j} className="flex gap-2">
+                        <span className="text-accent">∎</span>
+                        <span>{j}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <Link
+                    href="/request"
+                    className="bg-bg hover:bg-accent text-ink-soft font-semibold uppercase tracking-wide text-sm px-5 py-3 transition-colors"
+                  >
+                    Request a crew
+                  </Link>
+                  <a
+                    href={`tel:${CONTACT_PHONE.tel}`}
+                    className="border border-ink/20 hover:border-accent hover:text-accent text-ink font-semibold uppercase tracking-wide text-sm px-5 py-3 transition-colors"
+                  >
+                    Call {CONTACT_PHONE.display}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <section className="bg-bg text-ink-soft py-24 md:py-32 text-center">
+        <div className="max-w-4xl mx-auto px-4 lg:px-6">
+          <h2 className="display-caps text-5xl md:text-7xl tracking-tighter">
+            Don&rsquo;t see yours?
+          </h2>
+          <p className="mt-6 text-lg text-ink-soft/80 max-w-2xl mx-auto">
+            If it&rsquo;s a commercial building in Atlanta metro, we work in it.
+            Call &mdash; we&rsquo;ll talk through your protocol on the line.
+          </p>
+          <a
+            href={`tel:${CONTACT_PHONE.tel}`}
+            className="mono block text-4xl md:text-6xl tracking-tight mt-10 hover:text-accent transition-colors"
+          >
+            {CONTACT_PHONE.display}
+          </a>
         </div>
       </section>
     </>

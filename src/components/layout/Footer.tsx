@@ -1,40 +1,115 @@
 import Link from "next/link";
-import Image from "next/image";
+import LiveDot from "@/components/ui/LiveDot";
+import {
+  CONTACT_PHONE,
+  CONTACT_EMAIL,
+  COI_EMAIL,
+  HQ_ADDRESS,
+} from "@/lib/contact";
+
+const services = [
+  { href: "/services#emergency", label: "Emergency same-day" },
+  { href: "/services#biohazard", label: "Biohazard & trauma" },
+  { href: "/services#post-construction", label: "Post-construction" },
+  { href: "/services#post-event", label: "Post-event turnover" },
+  { href: "/services#multifamily", label: "Multifamily turnover" },
+  { href: "/services#flood", label: "Flood, water & sewage" },
+  { href: "/services#vandalism", label: "Vandalism & graffiti" },
+  { href: "/services#vendor-no-show", label: "Vendor no-show coverage" },
+  { href: "/services#recurring", label: "Recurring commercial" },
+];
+
+const company = [
+  { href: "/about", label: "About" },
+  { href: "/how-it-works", label: "How it works" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/facility-managers", label: "For facility managers" },
+  { href: "/property-managers", label: "For property managers" },
+  { href: "/crew", label: "Crew jobs" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-navy text-white">
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <div className="flex items-center gap-2 mb-3">
-              <Image src="/icon.svg" alt="SameDayScrub" width={24} height={24} />
-              <h3 className="font-heading text-lg font-bold">SameDayScrub</h3>
-            </div>
-            <p className="text-primary font-mono text-xs tracking-wider mb-2">&ldquo;Clean staff. Right now.&rdquo;</p>
-            <p className="text-gray-400 text-sm">
-              Commercial janitorial crews deployed same day.
-            </p>
+    <footer className="bg-bg text-ink-soft">
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div>
+          <div className="flex items-center gap-2 mb-4">
+            <span className="display lowercase text-2xl tracking-tighter">
+              samedayscrub
+            </span>
+            <LiveDot />
           </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-3">Quick Links</h4>
-            <div className="flex flex-col gap-2 text-sm text-gray-400">
-              <Link href="/book" className="hover:text-primary">Book a Crew</Link>
-              <Link href="/industries" className="hover:text-primary">Industries</Link>
-              <Link href="/workers" className="hover:text-primary">Join as Worker</Link>
-              <Link href="/dashboard" className="hover:text-primary">My Bookings</Link>
-              <Link href="/login" className="hover:text-primary">Log In</Link>
-            </div>
-          </div>
-          <div>
-            <h4 className="font-semibold text-sm mb-3">Contact</h4>
-            <p className="text-sm text-gray-400">
-              support@samedayscrub.com
-            </p>
-          </div>
+          <p className="text-ink-soft/70 text-sm max-w-xs leading-relaxed mb-6">
+            Atlanta&apos;s 24/7 emergency commercial cleaning response.
+            Crew on-site within 4 hours. Any condition, any hour.
+          </p>
+          <p className="mono text-[11px] uppercase tracking-widest text-ink-soft/50">
+            {HQ_ADDRESS}
+          </p>
+          <p className="mono text-[11px] uppercase tracking-widest text-ink-soft/50 mt-1">
+            GA business license · $2M GL · workers&apos; comp
+          </p>
         </div>
-        <div className="border-t border-gray-700 mt-8 pt-6 text-center text-xs text-gray-500">
-          &copy; {new Date().getFullYear()} SameDayScrub. All rights reserved.
+
+        <div>
+          <h4 className="mono text-[11px] uppercase tracking-widest text-ink-soft/50 mb-4">
+            Services
+          </h4>
+          <ul className="flex flex-col gap-2.5 text-sm text-ink-soft/80">
+            {services.map((s) => (
+              <li key={s.href}>
+                <Link href={s.href} className="hover:text-accent transition-colors">
+                  {s.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="mono text-[11px] uppercase tracking-widest text-ink-soft/50 mb-4">
+            Company
+          </h4>
+          <ul className="flex flex-col gap-2.5 text-sm text-ink-soft/80 mb-6">
+            {company.map((c) => (
+              <li key={c.href}>
+                <Link href={c.href} className="hover:text-accent transition-colors">
+                  {c.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <a
+            href={`tel:${CONTACT_PHONE.tel}`}
+            className="mono text-2xl tracking-tight block hover:text-accent transition-colors"
+          >
+            {CONTACT_PHONE.display}
+          </a>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="text-sm text-ink-soft/70 hover:text-accent transition-colors"
+          >
+            {CONTACT_EMAIL}
+          </a>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+          <p className="mono text-[11px] uppercase tracking-widest text-ink-soft/50">
+            &copy; {new Date().getFullYear()} SameDayScrub LLC
+          </p>
+          <a
+            href={`mailto:${COI_EMAIL}`}
+            className="mono text-[11px] uppercase tracking-widest text-ink-soft/60 hover:text-accent transition-colors"
+          >
+            Request COI
+          </a>
+          <p className="mono text-[11px] uppercase tracking-widest text-ink-soft/60 flex items-center gap-2">
+            <LiveDot small /> Available now · 24/7
+          </p>
         </div>
       </div>
     </footer>

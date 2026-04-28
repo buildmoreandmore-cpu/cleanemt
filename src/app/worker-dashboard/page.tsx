@@ -1,24 +1,35 @@
+import SectionLabel from "@/components/ui/SectionLabel";
+import LiveDot from "@/components/ui/LiveDot";
+
 export default function WorkerDashboardPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="font-heading text-3xl font-bold mb-2">Worker Dashboard</h1>
-      <p className="text-gray-500 mb-8">Your assigned jobs and earnings.</p>
+    <>
+      <section className="bg-bg text-ink-soft pt-20 pb-12 md:pt-28">
+        <div className="max-w-5xl mx-auto px-4 lg:px-6">
+          <SectionLabel number="∎" tone="dark">Crew console</SectionLabel>
+          <h1 className="display-caps mt-6 text-5xl md:text-7xl tracking-tighter">
+            Your assignments.
+          </h1>
+        </div>
+      </section>
 
-      <div className="bg-secondary rounded-card p-8 text-center space-y-4">
-        <h2 className="font-heading text-xl font-bold text-navy">Welcome to your dashboard</h2>
-        <p className="text-gray-500 max-w-md mx-auto">
-          Once you&apos;re approved and assigned a job, you&apos;ll see all your details here — schedule, address, and earnings.
-        </p>
-        <div className="inline-flex items-center gap-2 bg-white border rounded-full px-4 py-2 text-sm">
-          <span className="w-2 h-2 rounded-full bg-yellow-400"></span>
-          <span className="text-gray-600">Application status: <span className="font-semibold">Pending review</span></span>
+      <section className="bg-bg-soft py-16 md:py-20">
+        <div className="max-w-5xl mx-auto px-4 lg:px-6">
+          <div className="border border-ink/10 bg-white p-10">
+            <p className="mono text-[11px] uppercase tracking-[0.2em] text-ink/50 flex items-center gap-2">
+              <LiveDot small /> Application status · Pending review
+            </p>
+            <h2 className="display text-3xl md:text-4xl tracking-tighter mt-4">
+              Welcome.
+            </h2>
+            <p className="text-ink/70 mt-3 max-w-xl">
+              Once your background check clears, dispatchable jobs will appear
+              here: address, category, ETA, crew lead phone. The Telegram bot
+              also posts to your channel.
+            </p>
+          </div>
         </div>
-        <div>
-          <a href="#" className="text-primary hover:underline text-sm font-semibold">
-            Update your profile
-          </a>
-        </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

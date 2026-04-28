@@ -9,23 +9,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#FAFAFA",
-        foreground: "#1A1A2E",
-        primary: "#00C896",
-        "primary-hover": "#00B085",
-        secondary: "#F5F5F0",
-        navy: "#1A1A2E",
-        success: "#00C896",
-        warning: "#FFB800",
-        error: "#FF4444",
+        // Industrial response palette
+        bg: "#0E0E10",
+        "bg-soft": "#F6F5F1",
+        ink: "#0E0E10",
+        "ink-soft": "#F6F5F1",
+        accent: "#FF3B1F",
+        "accent-secondary": "#E8E3D6",
+        success: "#1F6F4E",
+
+        // Aliases used by older shadcn-style refs
+        background: "#0E0E10",
+        foreground: "#F6F5F1",
       },
       fontFamily: {
-        heading: ["var(--font-syne)", "sans-serif"],
-        body: ["var(--font-dm-sans)", "sans-serif"],
-        mono: ["var(--font-dm-mono)", "monospace"],
+        display: ["var(--font-display)", "ui-sans-serif", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
+      },
+      letterSpacing: {
+        tightest: "-0.04em",
+        tighter: "-0.02em",
       },
       borderRadius: {
-        card: "12px",
+        card: "2px",
+        none: "0",
       },
     },
   },

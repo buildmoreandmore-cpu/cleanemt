@@ -2,45 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: #1A1A2E;
-  background: #FAFAFA;
+:root {
+  --color-bg: #0E0E10;
+  --color-bg-soft: #F6F5F1;
+  --color-ink: #0E0E10;
+  --color-ink-soft: #F6F5F1;
+  --color-accent: #FF3B1F;
+  --color-accent-secondary: #E8E3D6;
+  --color-success: #1F6F4E;
 }
+
+html, body {
+  background: var(--color-bg-soft);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Default body sits on the warm off-white. Dark sections opt in. */
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  /* Display headlines: tight tracking, condensed */
+  .display {
+    font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+  }
+
+  .display-caps {
+    font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 0.92;
+    text-transform: uppercase;
+  }
+
+  /* Monospace numerics */
+  .mono {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-feature-settings: "tnum" 1;
   }
 }
 
-/* Motion Design: Fade-in-up on scroll */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Subtle reveal on first paint */
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal { animation: revealUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.reveal-1 { animation-delay: 0.05s; }
+.reveal-2 { animation-delay: 0.12s; }
+.reveal-3 { animation-delay: 0.20s; }
+.reveal-4 { animation-delay: 0.28s; }
+
+/* Live indicator pulse */
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(0.8); }
+}
+.live-dot { animation: livePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+/* Ticker marquee */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-track { animation: ticker 40s linear infinite; }
+
+/* Form elements: industrial, sharp corners */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+textarea,
+select {
+  border-radius: 2px;
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-/* Staggered offset delays for child elements */
-.stagger-1 { animation-delay: 0.05s; }
-.stagger-2 { animation-delay: 0.1s; }
-.stagger-3 { animation-delay: 0.15s; }
-.stagger-4 { animation-delay: 0.2s; }
-
-/* Subtle pulse for CTA buttons */
-@keyframes subtlePulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 200, 150, 0.4); }
-  50% { box-shadow: 0 0 0 8px rgba(0, 200, 150, 0); }
-}
-
-.animate-cta-pulse {
-  animation: subtlePulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
+/* Hide scrollbar on horizontal scroll lanes */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
