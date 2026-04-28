@@ -47,7 +47,6 @@ export const metadata: Metadata = {
     siteName: "CleanEMT",
     type: "website",
   },
-  icons: { icon: "/icon.svg" },
   other: {
     "theme-color": "#0E0E10",
   },
