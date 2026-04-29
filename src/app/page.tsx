@@ -41,7 +41,7 @@ export default function Home() {
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
               <Wordmark size="md" />
-              <LiveDot />
+              <LiveDot animate={false} />
             </div>
             <p className="mono text-[10px] uppercase tracking-[0.22em] text-ink-soft/55 mt-1">
               Emergency Mitigation Team

@@ -38,7 +38,7 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-2 mb-2">
             <Wordmark size="md" />
-            <LiveDot />
+            <LiveDot animate={false} />
           </div>
           <p className="mono text-[10px] uppercase tracking-[0.22em] text-ink-soft/55 mb-4">
             Emergency Mitigation Team

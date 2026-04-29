@@ -14,8 +14,8 @@ export default function Wordmark({
 }) {
   return (
     <span className="inline-flex items-baseline gap-2.5 leading-none">
-      <span className={`display lowercase tracking-tighter ${SIZES[size]}`}>
-        clean
+      <span className={`display tracking-tighter ${SIZES[size]}`}>
+        Clean
         <span className="uppercase tracking-wide text-accent">EMT</span>
       </span>
       {tagline && (

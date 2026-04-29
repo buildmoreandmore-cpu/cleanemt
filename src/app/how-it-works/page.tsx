@@ -103,7 +103,7 @@ export default function HowItWorksPage() {
             ].map(([label, body]) => (
               <li key={label} className="bg-bg-soft p-6">
                 <p className="mono text-[11px] uppercase tracking-[0.2em] text-ink/50 flex items-center gap-2">
-                  <LiveDot small /> {label}
+                  <LiveDot small animate={false} /> {label}
                 </p>
                 <p
                   className="text-ink/80 mt-3"

@@ -39,7 +39,7 @@ export default function Navbar({ phone }: { phone: Phone }) {
       <div className="max-w-7xl mx-auto px-4 lg:px-6 h-14 flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <Wordmark size="sm" />
-          <LiveDot />
+          <LiveDot animate={false} />
         </Link>
 
         {/* Desktop nav */}
